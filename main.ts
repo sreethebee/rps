@@ -8,6 +8,7 @@ input.onButtonPressed(Button.A, function () {
         `)
     PA += 1
     Rounds += 1
+    updatescore()
 })
 input.onButtonPressed(Button.AB, function () {
     basic.showLeds(`
@@ -19,6 +20,7 @@ input.onButtonPressed(Button.AB, function () {
         `)
     Ties += 1
     Rounds += 1
+    updatescore()
 })
 input.onButtonPressed(Button.B, function () {
     basic.showLeds(`
@@ -30,6 +32,7 @@ input.onButtonPressed(Button.B, function () {
         `)
     PB += 1
     Rounds += 1
+    updatescore()
 })
 input.onGesture(Gesture.Shake, function () {
     reset()
@@ -45,6 +48,7 @@ function updatescore () {
     OLED.writeStringNewLine("Rounds:" + Rounds)
 }
 function reset () {
+    basic.clearScreen()
     OLED.init(128, 64)
     PA = 0
     PB = 0
